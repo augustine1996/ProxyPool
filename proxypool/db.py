@@ -38,7 +38,7 @@ class RedisClient(object):
         将代理设置为MAX_SCORE
         :param proxy: 代理
         """
-        self.db.zadd(REDIS_KEY, MAX_SCORE, proxy)
+        self.db.zadd(REDIS_KEY, {proxy: MAX_SCORE})
 
     def decrease(self, proxy):
         """

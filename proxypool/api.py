@@ -18,7 +18,7 @@ def index_view():
     return "<h3>This is system provide a proxy!</h3>"
 
 
-@app.route('/<name>/get')
+@app.route('/get')
 def get_view():
     """
     获取一个随机代理
@@ -29,7 +29,7 @@ def get_view():
 
 
 
-@app.route('/<name>/count')
+@app.route('/count')
 def get_count():
     """
     获得当前代理池中代理的总量
