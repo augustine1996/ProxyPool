@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # 设置下载器状态
-DOWNLOADER_ENABLED = True
+DOWNLOADER_ENABLED = False
 
 # 设置测试器状态
 TESTER_ENABLED = True
