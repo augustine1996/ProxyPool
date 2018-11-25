@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
+import re
+
 import requests
 from lxml import etree
 import time
+import pyquery as pq
 
 
 class CrawlerMetaclass(type):
@@ -51,6 +54,18 @@ class Crawler(object, metaclass=CrawlerMetaclass):
             print('成功获取到代理：', proxy)
             proxies.append(proxy)
         return proxies
+
+    def crawl_ip3366(self):
+        for page in range(1, 4):
+            start_url = 'http://www.ip3366.net/free/?stype=1&page={}'.format(page)
+            html = self.get_page(start_url)
+            ip_address = re.compile('<tr>\s*<td>(.*?)</td>\s*<td>(.*?)</td>')
+            # \s * 匹配空格，起到换行作用
+            re_ip_address = ip_address.findall(html)
+            for address, port in re_ip_address:
+                result = address + ':' + port
+                yield result.replace(' ', '')
+            time.sleep(1)
 
     def crawl_kuaidaili(self):
         for i in range(1, 4):

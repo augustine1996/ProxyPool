@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # 设置下载器状态
-DOWNLOADER_ENABLED = True
+DOWNLOADER_ENABLED = False
 
 # 设置测试器状态
 TESTER_ENABLED = True
@@ -41,4 +41,4 @@ VALID_STATUS_CODES = [200, 302]
 TEST_URL = 'http://www.baidu.com'
 
 # 设置一次测试的数量
-TEST_SIZE = 10
+TEST_SIZE = 20
