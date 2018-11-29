@@ -9,7 +9,7 @@ TESTER_ENABLED = True
 API_ENABLED = True
 
 # 设置过滤代理的间隔时间
-TEST_INTERVAL = 30
+TEST_INTERVAL = 70
 
 # 设置获取代理的间隔时间
 DOWNLOAD_INTERVAL = 300
